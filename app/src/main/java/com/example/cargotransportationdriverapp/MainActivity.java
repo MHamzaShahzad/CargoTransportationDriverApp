@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         .createSignInIntentBuilder()
                         .setAvailableProviders(providers)
                         .setIsSmartLockEnabled(false)
-                        .setTheme(R.style.MyTheme)
+                        .setTheme(R.style.MyNewTheme)
                         .build(),
                 RC_SIGN_IN);
 

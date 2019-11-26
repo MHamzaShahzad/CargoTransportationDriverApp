@@ -8,6 +8,7 @@
     android:visibility="gone"
     app:behavior_hideable="false"
     app:behavior_peekHeight="45dp"
+
     app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
     <ImageButton
@@ -20,7 +21,8 @@
         android:layout_height="wrap_content"
         android:background="@drawable/bottom_up_sheet_round"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:padding="16dp"
+        >
 
         <TextView
             android:id="@+id/currentRideStatus"
@@ -240,6 +242,8 @@
                 android:drawableRight="@drawable/ic_message_black"
                 android:drawablePadding="10dp"
                 android:gravity="center"
+                android:layout_marginLeft="5dp"
+                android:background="@color/buttoncolor"
                 android:padding="10dp"
                 android:text="Send Message" />
 
@@ -251,6 +255,8 @@
                 android:drawableEnd="@drawable/ic_call_black"
                 android:drawableRight="@drawable/ic_call_black"
                 android:drawablePadding="10dp"
+                android:background="@color/buttoncolor"
+                android:layout_marginLeft="5dp"
                 android:gravity="center"
                 android:padding="10dp"
                 android:text="Make a call" />

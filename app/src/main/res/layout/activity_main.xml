@@ -4,7 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/colorGreen">
+    <ImageView
+        android:id="@+id/splash_image"
+        android:layout_width="250dp"
+        android:layout_height="200dp"
+        android:src="@drawable/splashimage"
+        android:layout_centerInParent="true"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textSize="20sp"
+        android:layout_below="@+id/splash_image"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"
+        android:textStyle="bold"/>
 
 
     <LinearLayout
@@ -17,13 +34,19 @@
             android:id="@+id/btnLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Already Have Account ?" />
+            android:text="Already Have Account ?"
+            android:textStyle="bold"
+            android:layout_margin="5dp"
+            android:background="@color/buttoncolor"/>
 
         <Button
             android:id="@+id/btnCreateAccount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Create New Account" />
+            android:text="Create New Account"
+            android:textStyle="bold"
+            android:layout_margin="5dp"
+            android:background="@color/buttoncolor"/>
 
     </LinearLayout>
 

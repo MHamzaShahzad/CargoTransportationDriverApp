@@ -9,5 +9,8 @@
     <color name="lightTextColorBlack">#A79C9C</color>
     <color name="viewLineColor">#A79C9C</color>
     <color name="colorWhite">#A79C9C</color>
+    <color name="colorGreen">#4CAF50</color>
+    <color name="white">#FFFFFF</color>
+    <color name="buttoncolor">#A5D6A7</color>
 
 </resources>

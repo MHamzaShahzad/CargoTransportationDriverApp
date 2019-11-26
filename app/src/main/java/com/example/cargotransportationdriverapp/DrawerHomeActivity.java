@@ -250,11 +250,8 @@ public class DrawerHomeActivity extends AppCompatActivity
 
             getSupportFragmentManager().beginTransaction().replace(android.R.id.content, new FragmentRidesHistory()).addToBackStack(null).commit();
 
-        } else if (id == R.id.nav_slideshow) {
-
         } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
+            getSupportFragmentManager().beginTransaction().replace(android.R.id.content, new ContactUsFragment()).addToBackStack(null).commit();
 
         }
 

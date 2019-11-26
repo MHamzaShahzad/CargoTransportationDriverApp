@@ -12,8 +12,10 @@
         android:id="@+id/btnOnlineOffline"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="40dp"
-        android:layout_marginRight="40dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginRight="45dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/buttoncolor"
         />
 
     <fragment

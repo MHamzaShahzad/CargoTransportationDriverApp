@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ContactUsFragment"
+    android:background="@color/colorGreen">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textSize="22sp"
+                android:layout_marginTop="40dp"
+                android:layout_below="@+id/splash_image"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_marginBottom="30dp"/>
+
+
+            <TextView
+                android:id="@+id/title2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title"
+                android:layout_margin="5dp"
+                android:text="Cargo Transportation digitlize the way of sending parcel. We help people to send packages within minutes. For any query or complain contact us."
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:layout_marginTop="30dp"
+                android:textStyle="bold" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_below="@+id/title2"
+                android:layout_marginTop="20dp">
+
+
+                <EditText
+                    android:id="@+id/inputFeedbackComplain"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start|top"
+                    android:hint="Feedback Here!"
+                    android:lines="3"
+                    android:textColorHint="@color/white"
+                    android:textColor="@color/white"
+                    android:padding="10dp"
+                    android:background="@color/buttoncolor"
+                    android:layout_margin="5dp"
+                    android:layout_marginTop="5dp"
+                    />
+                <Button
+                    android:id="@+id/btnSubmitFeedBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/buttoncolor"
+                    android:text="Send"
+                    android:textAllCaps="false"
+                    android:textSize="17sp"
+                    android:textColor="#FFFFFF"
+                    android:layout_gravity="center"
+                    />
+
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
