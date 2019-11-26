@@ -363,9 +363,9 @@ public class CreateNewAccountActivity extends AppCompatActivity implements View.
             case 1:
                 return Constants.DRIVER_VEHICLE_TYPE_LOADER_RIKSHAW;
             case 2:
-                return Constants.STRING_DRIVER_VEHICLE_TYPE_RAVI;
+                return Constants.DRIVER_VEHICLE_TYPE_RAVI;
             case 3:
-                return Constants.STRING_DRIVER_VEHICLE_TYPE_SHAZOR;
+                return Constants.DRIVER_VEHICLE_TYPE_SHAZOR;
             default:
                 return "null";
         }
