@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:padding="20dp"
+    android:clickable="true"
+    tools:context=".FragmentCollectRideFare">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/layoutRideFare"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="Collect Ride Fare"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textSize="23sp" />
+
+            <TextView
+                android:id="@+id/rideFarePlace"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:textStyle="italic|bold"
+                android:textAlignment="center"
+                android:textSize="23sp" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/rideFareCollected"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/layoutRideFare"
+            android:inputType="number"
+            android:hint="Enter Fare Collected"/>
+
+        <Button
+            android:id="@+id/btnPaymentCollected"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rideFareCollected"
+            android:text="Collect Payment"/>
+
+    </RelativeLayout>
+
+</FrameLayout>

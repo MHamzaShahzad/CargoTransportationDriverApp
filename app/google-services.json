@@ -1,0 +1,85 @@
+{
+  "project_info": {
+    "project_number": "205990244462",
+    "firebase_url": "https://cargotransportationapp-9ee6f.firebaseio.com",
+    "project_id": "cargotransportationapp-9ee6f",
+    "storage_bucket": "cargotransportationapp-9ee6f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:205990244462:android:b897807094f6cf4e18b67f",
+        "android_client_info": {
+          "package_name": "com.example.cargotransportationdriverapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "205990244462-bjqiicj1r4tb02bogn4pccsba0e8ubeh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.cargotransportationdriverapp",
+            "certificate_hash": "add77befe713b270d313801d124d15891275d8d2"
+          }
+        },
+        {
+          "client_id": "205990244462-gea28vjlgv97jvtk56f2s2islavvv4ck.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJUWYUs27bVGSXCCzTOtT9G8KpfXti_eA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "205990244462-gea28vjlgv97jvtk56f2s2islavvv4ck.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:205990244462:android:580c703d929a3f6018b67f",
+        "android_client_info": {
+          "package_name": "com.example.cargotransportationriderapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "205990244462-ojakim63mig4eepdbag1oj3fnv9rqsh4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.cargotransportationriderapp",
+            "certificate_hash": "add77befe713b270d313801d124d15891275d8d2"
+          }
+        },
+        {
+          "client_id": "205990244462-gea28vjlgv97jvtk56f2s2islavvv4ck.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJUWYUs27bVGSXCCzTOtT9G8KpfXti_eA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "205990244462-gea28vjlgv97jvtk56f2s2islavvv4ck.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

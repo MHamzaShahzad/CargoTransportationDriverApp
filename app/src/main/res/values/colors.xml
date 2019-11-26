@@ -3,4 +3,11 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="fragmentBackground">#fff</color>
+    <color name="locationsTextBackground">#FFFFFF</color>
+    <color name="darkTextColorBlack">#050509</color>
+    <color name="lightTextColorBlack">#A79C9C</color>
+    <color name="viewLineColor">#A79C9C</color>
+    <color name="colorWhite">#A79C9C</color>
+
 </resources>
