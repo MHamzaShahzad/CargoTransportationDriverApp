@@ -9,7 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.cargotransportationdriverapp.CommonFunctionsClass;
+import com.example.cargotransportationdriverapp.common.CommonFunctionsClass;
 import com.example.cargotransportationdriverapp.R;
 import com.example.cargotransportationdriverapp.models.RideDetails;
 

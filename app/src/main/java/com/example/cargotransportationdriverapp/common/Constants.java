@@ -1,4 +1,4 @@
-package com.example.cargotransportationdriverapp;
+package com.example.cargotransportationdriverapp.common;
 
 public class Constants {
 
@@ -64,4 +64,7 @@ public class Constants {
     public static final String STRING_CURRENT_RIDE_MODEL = "CurrentRideModel";
 
 
+    public static final String TITLE_CONTACT_US = "Contact Us";
+    public static final String TITLE_HOME = "Home";
+    public static final String TITLE_RIDES_HISTORY = "Rides History";
 }

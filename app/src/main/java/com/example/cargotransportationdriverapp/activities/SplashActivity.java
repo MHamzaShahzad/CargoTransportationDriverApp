@@ -1,4 +1,4 @@
-package com.example.cargotransportationdriverapp;
+package com.example.cargotransportationdriverapp.activities;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,11 +9,13 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.cargotransportationdriverapp.common.CommonFunctionsClass;
+import com.example.cargotransportationdriverapp.common.Constants;
+import com.example.cargotransportationdriverapp.R;
 import com.example.cargotransportationdriverapp.controllers.MyFirebaseDatabase;
 import com.example.cargotransportationdriverapp.models.Driver;
 import com.example.cargotransportationdriverapp.models.DriverStatuses;
 import com.firebase.ui.auth.AuthUI;
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;

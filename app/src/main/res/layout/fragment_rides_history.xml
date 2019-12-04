@@ -6,7 +6,7 @@
     android:background="@color/fragmentBackground"
     android:padding="10dp"
     android:clickable="true"
-    tools:context=".FragmentRidesHistory">
+    tools:context=".fragments.FragmentRidesHistory">
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swipe_container"

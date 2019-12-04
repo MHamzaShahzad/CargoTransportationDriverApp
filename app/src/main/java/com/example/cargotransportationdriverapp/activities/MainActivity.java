@@ -1,4 +1,4 @@
-package com.example.cargotransportationdriverapp;
+package com.example.cargotransportationdriverapp.activities;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,6 +12,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.cargotransportationdriverapp.common.CommonFunctionsClass;
+import com.example.cargotransportationdriverapp.common.Constants;
+import com.example.cargotransportationdriverapp.R;
 import com.example.cargotransportationdriverapp.controllers.MyFirebaseDatabase;
 import com.example.cargotransportationdriverapp.models.Driver;
 import com.example.cargotransportationdriverapp.models.DriverStatuses;

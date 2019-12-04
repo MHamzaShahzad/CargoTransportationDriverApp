@@ -1,4 +1,4 @@
-package com.example.cargotransportationdriverapp;
+package com.example.cargotransportationdriverapp.common;
 
 import android.app.Activity;
 import android.content.Context;

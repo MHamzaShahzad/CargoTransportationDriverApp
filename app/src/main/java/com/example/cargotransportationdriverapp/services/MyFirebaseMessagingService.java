@@ -16,7 +16,7 @@ import android.util.Log;
 import androidx.annotation.RequiresApi;
 import androidx.core.app.NotificationCompat;
 
-import com.example.cargotransportationdriverapp.MainActivity;
+import com.example.cargotransportationdriverapp.activities.MainActivity;
 import com.example.cargotransportationdriverapp.R;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;

@@ -1,4 +1,4 @@
-package com.example.cargotransportationdriverapp;
+package com.example.cargotransportationdriverapp.activities;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.RadioButton;
@@ -21,6 +20,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.cargotransportationdriverapp.common.CommonFunctionsClass;
+import com.example.cargotransportationdriverapp.common.Constants;
+import com.example.cargotransportationdriverapp.R;
 import com.example.cargotransportationdriverapp.controllers.MyFirebaseDatabase;
 import com.example.cargotransportationdriverapp.controllers.MyFirebaseStorage;
 import com.example.cargotransportationdriverapp.models.Driver;

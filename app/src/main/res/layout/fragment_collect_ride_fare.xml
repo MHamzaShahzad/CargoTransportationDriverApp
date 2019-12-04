@@ -6,7 +6,7 @@
     android:background="@color/colorGreen"
     android:padding="20dp"
     android:clickable="true"
-    tools:context=".FragmentCollectRideFare">
+    tools:context=".fragments.FragmentCollectRideFare">
 
     <RelativeLayout
         android:layout_width="match_parent"

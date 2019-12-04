@@ -1,4 +1,4 @@
-package com.example.cargotransportationdriverapp;
+package com.example.cargotransportationdriverapp.fragments;
 
 
 import android.content.Context;
@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.example.cargotransportationdriverapp.R;
 import com.example.cargotransportationdriverapp.adapter.AdapterRidesHistory;
 import com.example.cargotransportationdriverapp.controllers.MyFirebaseDatabase;
 import com.example.cargotransportationdriverapp.models.RideDetails;

@@ -1,4 +1,4 @@
-package com.example.cargotransportationdriverapp;
+package com.example.cargotransportationdriverapp.controllers;
 
 import android.annotation.SuppressLint;
 import android.app.NotificationChannel;
@@ -16,6 +16,8 @@ import android.util.Log;
 
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
+
+import com.example.cargotransportationdriverapp.R;
 
 public class CustomNotificationGenerator {
 

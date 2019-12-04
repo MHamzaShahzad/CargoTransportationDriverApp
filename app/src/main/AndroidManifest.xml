@@ -20,7 +20,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".CreateNewAccountActivity" />
+        <activity android:name=".activities.CreateNewAccountActivity" />
 
         <uses-library
             android:name="org.apache.http.legacy"
@@ -30,7 +30,8 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name=".SplashActivity">
+        <activity android:name=".activities.SplashActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -39,11 +40,11 @@
         </activity>
 
         <activity
-            android:name=".DrawerHomeActivity"
+            android:name=".activities.DrawerHomeActivity"
             android:label="@string/title_activity_drawer_home"
             android:theme="@style/AppTheme.NoActionBar" />
 
-        <activity android:name=".MainActivity" />
+        <activity android:name=".activities.MainActivity" />
 
         <service
             android:name=".services.MyFirebaseMessagingService"

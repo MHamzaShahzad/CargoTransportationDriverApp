@@ -1,7 +1,6 @@
-package com.example.cargotransportationdriverapp;
+package com.example.cargotransportationdriverapp.activities;
 
 import android.Manifest;
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -11,6 +10,13 @@ import android.location.Geocoder;
 import android.location.Location;
 import android.os.Bundle;
 
+import com.example.cargotransportationdriverapp.common.CommonFunctionsClass;
+import com.example.cargotransportationdriverapp.common.Constants;
+import com.example.cargotransportationdriverapp.fragments.ContactUsFragment;
+import com.example.cargotransportationdriverapp.fragments.FragmentCollectRideFare;
+import com.example.cargotransportationdriverapp.interfaces.FragmentInteractionListenerInterface;
+import com.example.cargotransportationdriverapp.fragments.FragmentRidesHistory;
+import com.example.cargotransportationdriverapp.R;
 import com.example.cargotransportationdriverapp.controllers.MediaControllingClass;
 import com.example.cargotransportationdriverapp.controllers.MyFirebaseDatabase;
 import com.example.cargotransportationdriverapp.controllers.SendPushNotificationFirebase;
@@ -22,29 +28,20 @@ import com.example.cargotransportationdriverapp.models.UpdateLocationsModel;
 import com.example.cargotransportationdriverapp.models.User;
 import com.firebase.ui.auth.AuthUI;
 import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
-import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.location.places.AutocompleteFilter;
-import com.google.android.gms.location.places.ui.PlaceAutocomplete;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import com.google.android.gms.maps.model.PolylineOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.libraries.places.api.model.Place;
-import com.google.android.libraries.places.widget.AutocompleteSupportFragment;
-import com.google.android.libraries.places.widget.listener.PlaceSelectionListener;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -89,7 +86,6 @@ import org.joda.time.DateTime;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
@@ -100,7 +96,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class DrawerHomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, OnMapReadyCallback,
         GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener,
-        LocationListener {
+        LocationListener, FragmentInteractionListenerInterface {
 
     private static final String TAG = DrawerHomeActivity.class.getName();
     private Context context;
@@ -136,6 +132,8 @@ public class DrawerHomeActivity extends AppCompatActivity
         bottom_sheet = findViewById(R.id.bottom_sheet);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null)
+            getSupportActionBar().setTitle(Constants.TITLE_HOME);
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -212,6 +210,9 @@ public class DrawerHomeActivity extends AppCompatActivity
             drawer.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
+            if (getSupportFragmentManager().getBackStackEntryCount() == 0)
+                if (getSupportActionBar() != null)
+                    getSupportActionBar().setTitle(Constants.TITLE_HOME);
         }
     }
 
@@ -248,10 +249,10 @@ public class DrawerHomeActivity extends AppCompatActivity
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
 
-            getSupportFragmentManager().beginTransaction().replace(android.R.id.content, new FragmentRidesHistory()).addToBackStack(null).commit();
+            getSupportFragmentManager().beginTransaction().replace(android.R.id.content, new FragmentRidesHistory(), Constants.TITLE_RIDES_HISTORY).addToBackStack(Constants.TITLE_RIDES_HISTORY).commit();
 
         } else if (id == R.id.nav_share) {
-            getSupportFragmentManager().beginTransaction().replace(android.R.id.content, new ContactUsFragment()).addToBackStack(null).commit();
+            getSupportFragmentManager().beginTransaction().replace(android.R.id.content, ContactUsFragment.newInstance(), Constants.TITLE_CONTACT_US).addToBackStack(Constants.TITLE_CONTACT_US).commit();
 
         }
 
@@ -367,6 +368,7 @@ public class DrawerHomeActivity extends AppCompatActivity
         mLocationClient.connect();
     }
 
+
     private String getCompleteAddressString(Context context, double LATITUDE, double LONGITUDE) {
         String strAdd = null;
         Geocoder geocoder = new Geocoder(context, Locale.getDefault());
@@ -403,6 +405,9 @@ public class DrawerHomeActivity extends AppCompatActivity
 
                     switch ((String) dataSnapshot.getValue()) {
                         case Constants.STATUS_DEFAULT:
+                            mMap.clear();
+                            if (bottom_sheet != null)
+                                bottom_sheet.setVisibility(View.INVISIBLE);
                             mediaControllingClass.stopPlaying();
                             break;
                         case Constants.DRIVER_STATUS_RECEIVING_RIDE:
@@ -442,6 +447,9 @@ public class DrawerHomeActivity extends AppCompatActivity
                             break;
                         case Constants.STATUS_RIDE_FARE_COLLECTED:
                             getRideAndUserDetails(Constants.STATUS_RIDE_FARE_COLLECTED);
+                            updateCurrentStatusSelf(Constants.STATUS_DEFAULT);
+                            break;
+                        case Constants.STATUS_RIDE_REVIEWED:
                             updateCurrentStatusSelf(Constants.STATUS_DEFAULT);
                             break;
                         default:
@@ -1014,5 +1022,11 @@ public class DrawerHomeActivity extends AppCompatActivity
     private void startMainActivity() {
         startActivity(new Intent(context, MainActivity.class));
         finish();
+    }
+
+    @Override
+    public void onFragmentInteraction(String title) {
+        if (getSupportActionBar() != null)
+            getSupportActionBar().setTitle(Constants.TITLE_HOME);
     }
 }

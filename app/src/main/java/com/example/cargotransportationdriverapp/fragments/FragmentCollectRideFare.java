@@ -1,4 +1,4 @@
-package com.example.cargotransportationdriverapp;
+package com.example.cargotransportationdriverapp.fragments;
 
 
 import android.app.Activity;
@@ -8,7 +8,6 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -18,11 +17,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.cargotransportationdriverapp.common.Constants;
+import com.example.cargotransportationdriverapp.R;
+import com.example.cargotransportationdriverapp.activities.DrawerHomeActivity;
 import com.example.cargotransportationdriverapp.controllers.MyFirebaseDatabase;
 import com.example.cargotransportationdriverapp.controllers.SendPushNotificationFirebase;
-import com.example.cargotransportationdriverapp.models.Driver;
 import com.example.cargotransportationdriverapp.models.RideDetails;
-import com.example.cargotransportationdriverapp.models.User;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
